@@ -12,5 +12,7 @@ langchain-experimental
 langchain-text-splitters
 langchain-text-splitters
 langchain_google_genai
+langchain_pinecone
 
 youtube-transcript-api
+pinecone
