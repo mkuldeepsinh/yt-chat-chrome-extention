@@ -16,3 +16,6 @@ langchain_pinecone
 
 youtube-transcript-api
 pinecone
+
+fastapi
+uvicorn[standard]

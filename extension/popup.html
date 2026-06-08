@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Chat — AI Video Assistant</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Popup-specific styles */
+    body {
+      width: 320px;
+      min-height: 200px;
+      margin: 0;
+      padding: 0;
+      background: rgba(15, 15, 20, 0.98);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #e8eaed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .popup-container {
+      text-align: center;
+      padding: 32px 24px;
+    }
+
+    .popup-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #FF4444 0%, #E040FB 50%, #7C3AED 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 16px rgba(255, 68, 68, 0.25);
+    }
+
+    .popup-icon svg {
+      color: white;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #FF4444, #7C3AED);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p {
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .popup-hint {
+      margin-top: 20px;
+      padding: 10px 16px;
+      background: rgba(255, 68, 68, 0.08);
+      border: 1px solid rgba(255, 68, 68, 0.15);
+      border-radius: 10px;
+      font-size: 12px;
+      color: #a0a4ab;
+    }
+  </style>
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M9.5 8.5L15.5 12L9.5 15.5V8.5Z" fill="white"/>
+        <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V6H20V18Z" fill="white" opacity="0.7"/>
+      </svg>
+    </div>
+    <h1>YT Chat</h1>
+    <p>AI-powered video assistant</p>
+    <div class="popup-hint">
+      Navigate to a YouTube video and click this icon to start chatting!
+    </div>
+  </div>
+</body>
+</html>
