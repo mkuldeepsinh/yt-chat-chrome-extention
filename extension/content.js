@@ -8,7 +8,7 @@
   if (window.__ytChatInjected) return;
   window.__ytChatInjected = true;
 
-  const API_BASE = "http://localhost:8000";
+  const API_BASE = "https://web-production-2be94.up.railway.app";
   const PANEL_WIDTH = 420;
 
   let panelEl = null;

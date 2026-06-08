@@ -1,2 +1,4 @@
 *venv*
-.env
+.env__pycache__/
+*.pyc
+yt-chat-extension.zip
