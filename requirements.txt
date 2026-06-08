@@ -1,0 +1,16 @@
+pandas
+numpy
+
+dotenv
+faiss-cpu
+
+langchain
+langchain-community
+langchain-openai
+langchain-core
+langchain-experimental
+langchain-text-splitters
+langchain-text-splitters
+langchain_google_genai
+
+youtube-transcript-api
