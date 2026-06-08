@@ -5,6 +5,10 @@ from langchain_core.runnables import RunnableLambda
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.runnables import RunnableParallel
 from langchain_core.runnables import RunnableSequence
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+from youtube_transcript_api import YouTubeTranscriptApi
+from urllib.parse import urlparse, parse_qs
 
 from dotenv import load_dotenv
 import os
@@ -32,3 +36,20 @@ llm = GoogleGenerativeAI(model = "gemini-2.5-flash", google_api_key = gemini_api
 # })
 
 # print(result)
+
+yt_url = "https://www.youtube.com/watch?v=lacFcgcHx6I&t=6408s"
+video_id = parse_qs(urlparse(yt_url).query)["v"][0]
+yt_transcript = YouTubeTranscriptApi().fetch(video_id)
+
+text = "\n".join([i.text for i in yt_transcript])
+# print(text)
+
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size = 1000,
+    chunk_overlap = 200
+)
+
+chunks = splitter.split_text(text)
+
+# print(len(chunks))
+# print(chunks[0])
