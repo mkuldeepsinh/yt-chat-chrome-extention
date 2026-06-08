@@ -1,4 +1,5 @@
-from langchain_google_genai import GoogleGenerativeAI
+from langchain_core import embeddings
+from langchain_google_genai import GoogleGenerativeAI,GoogleGenerativeAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda
@@ -16,7 +17,6 @@ import os
 load_dotenv()
 
 gemini_api_key = os.getenv("GEMINI_API_KEY")
-print(gemini_api_key)
 
 llm = GoogleGenerativeAI(model = "gemini-2.5-flash", google_api_key = gemini_api_key)
 
@@ -37,9 +37,9 @@ llm = GoogleGenerativeAI(model = "gemini-2.5-flash", google_api_key = gemini_api
 
 # print(result)
 
-yt_url = "https://www.youtube.com/watch?v=lacFcgcHx6I&t=6408s"
+yt_url = "https://www.youtube.com/watch?v=6iztuIGwahk"
 video_id = parse_qs(urlparse(yt_url).query)["v"][0]
-yt_transcript = YouTubeTranscriptApi().fetch(video_id)
+yt_transcript = YouTubeTranscriptApi().fetch(video_id , languages=['hi'])
 
 text = "\n".join([i.text for i in yt_transcript])
 # print(text)
@@ -53,3 +53,12 @@ chunks = splitter.split_text(text)
 
 # print(len(chunks))
 # print(chunks[0])
+
+embeddingsGen = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001"
+)
+
+embeddingsContext = embeddingsGen.embed_documents(chunks)
+
+# print(len(embeddingsContext))
+# print(embeddingsContext[0])
